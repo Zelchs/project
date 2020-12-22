@@ -1,0 +1,16 @@
+{
+  "name": "raivi/project",
+  "description": "Product page",
+  "authors": [
+    {
+      "name": "Raivis Zelcs",
+      "email": "raivis0211@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "app//": "./"
+    }
+  }
+}
