@@ -19,14 +19,24 @@ class MainController
     {
         $errors = [];
         $productData = [
-            "title" => "",
-            "description" => "",
-            "price" => ""
+            "sku" => "",
+            "name" => "",
+            "price" => "",
+            "size" => "",
+            "weight" => "",
+            "dimensions" => ""
         ];
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $productData["title"] = $_POST["title"];
-            $productData["description"] = $_POST["description"];
+            $productData["sku"] = $_POST["sku"];
+            $productData["name"] = $_POST["name"];
             $productData["price"] = (float)$_POST["price"];
+            $productData["size"] = (int)$_POST["size"];
+            $productData["weight"] = (int)$_POST["weight"];
+            if ($_POST["typeSwitch"] === "FUR") {
+                $productData["dimensions"] = $_POST["height"] . "x" . $_POST["width"] . "x" . $_POST["length"];
+            } else {
+                $productData["dimensions"] = "";
+            }
 
             $product = new Product();
             $product->load($productData);
@@ -46,12 +56,12 @@ class MainController
 
     public function delete(Router $router)
     {
-        $id = $_POST["id"] ?? null;
-        if (!$id) {
+        $toDelete = $_POST["checked"] ?? null;
+        if (!$toDelete) {
             header("Location: /");
             exit;
         }
-        $router->db->deleteProduct($id);
+        $router->db->deleteProduct($toDelete);
         header("Location: /");
     }
 }

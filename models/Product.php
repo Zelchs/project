@@ -6,29 +6,33 @@ use app\Database;
 
 class Product
 {
-    public ?int $id = null;
-    public ?string $title = null;
-    public ?string $description  = null;
+    public ?string $sku = null;
+    public ?string $name = null;
     public ?float $price = null;
+    public ?int $size  = null;
+    public ?int $weight = null;
+    public ?string $dimensions = null;
 
-    public function load($data)
+    public function load($productData)
     {
-        $this->id = $data["id"] ?? null;
-        $this->title = $data["title"];
-        $this->description = $data["description"] ?? "";
-        $this->price = $data["price"];
+        $this->sku = $productData["sku"];
+        $this->name = $productData["name"];
+        $this->price = $productData["price"];
+        $this->size = $productData["size"] ?? null;
+        $this->weight = $productData["weight"] ?? null;
+        $this->dimensions = $productData["dimensions"] ?? null;
     }
 
     public function save()
     {
         $errors = [];
 
-        if (!$this->title) {
-            $errors[] = "Product title is required";
+        if (!$this->name) {
+            $errors["nameError"] = "Product name is required";
         }
 
         if (!$this->price) {
-            $errors[] = "Product price is required";
+            $errors["priceError"] = "Product price is required";
         }
 
 

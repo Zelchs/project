@@ -15,7 +15,7 @@
 
         <footer class="footer mt-5">
             <div class="container border-top text-center pt-5 pb-5">
-                <span class="text-muted">Place sticky footer content here.</span>
+                <span class="text-muted">Copyright &copy; Zelchs <?php echo date("Y")  ?></span>
             </div>
         </footer>
     </div>

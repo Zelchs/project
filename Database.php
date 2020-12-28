@@ -11,15 +11,16 @@ class Database
     public static Database $db;
     public function __construct()
     {
-        $this->pdo = new PDO("mysql:host=localhost;port=3306;dbname=products_crud", "root", "");
+        $this->pdo = new PDO("mysql:host=localhost;port=3306;dbname=products", "root", "");
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
         self::$db = $this;
     }
 
     public function getProducts()
     {
-        $statement = $this->pdo->prepare("SELECT * FROM products ORDER BY create_date DESC");
+        $statement = $this->pdo->prepare("SELECT * FROM posts ORDER BY sku ASC");
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -27,21 +28,25 @@ class Database
 
     public function createProduct(Product $product)
     {
-        $statement = $this->pdo->prepare("INSERT INTO products (title, image, description, price, create_date) 
-            VALUES (:title, :image, :description, :price, :date)
+        $statement = $this->pdo->prepare("INSERT INTO posts (sku, name, price, size, weight, dimensions, date_created) 
+            VALUES (:sku, :name, :price, :size, :weight, :dimensions, :date)
         ");
-        $statement->bindValue(':title', $product->title);
-        $statement->bindValue(':image', $product->imagePath);
-        $statement->bindValue(':description', $product->description);
+        $statement->bindValue(':sku', $product->sku);
+        $statement->bindValue(':name', $product->name);
         $statement->bindValue(':price', $product->price);
+        $statement->bindValue(':size', $product->size);
+        $statement->bindValue(':weight', $product->weight);
+        $statement->bindValue(':dimensions', $product->dimensions);
         $statement->bindValue(':date', date("Y-m-d H:i:s"));
         $statement->execute();
     }
 
-    public function deleteProduct($id)
+    public function deleteProduct($toDelete)
     {
-        $statement = $this->pdo->prepare("DELETE FROM products WHERE id = :id");
-        $statement->bindValue(":id", $id);
-        $statement->execute();
+        $statement = $this->pdo->prepare("DELETE FROM posts WHERE id = :id");
+        foreach ($toDelete as $id) {
+            $statement->bindValue(":id", $id,);
+            $statement->execute();
+        }
     }
 }

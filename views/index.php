@@ -9,153 +9,27 @@
 </header>
 
 <main>
-    <form action="" id="deleteForm" method="get">
+    <form action="/delete" id="deleteForm" method="POST">
         <div class="row">
+            <?php foreach ($products as $key => $product) { ?>
 
-            <div class="col-md-4 col-lg-3">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <input type="checkbox" name="" id="">
-                        <ul class="list-unstyled mt-3 mb-4  text-center">
-                            <li>10 users included</li>
-                            <li>2 GB of storage</li>
-                            <li>Email support</li>
-                            <li>Help center access</li>
-                        </ul>
+                <div class="col-md-4 col-lg-3">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <input type="checkbox" name="checked[]" id="" value="<?php echo $product["id"] ?>">
+                            <ul class="list-unstyled mt-3 mb-4  text-center">
+                                <li><?php echo $product["sku"] ?></li>
+                                <li><?php echo $product["name"]  ?></li>
+                                <li><?php echo $product["price"] ?> $</li>
+                                <?php echo $product["size"] ? "<li>Size: {$product['size']} MB</li>" : null ?>
+                                <?php echo $product["weight"] ? "<li>Weight: {$product['weight']}KG</li>" : null ?>
+                                <?php echo $product["dimensions"] ? "<li>Dimensions: {$product['dimensions']}</li>" : null ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <input type="checkbox" name="" id="">
-                        <ul class="list-unstyled mt-3 mb-4  text-center">
-                            <li>10 users included</li>
-                            <li>2 GB of storage</li>
-                            <li>Email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <input type="checkbox" name="" id="">
-                        <ul class="list-unstyled mt-3 mb-4  text-center">
-                            <li>10 users included</li>
-                            <li>2 GB of storage</li>
-                            <li>Email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <input type="checkbox" name="" id="">
-                        <ul class="list-unstyled mt-3 mb-4  text-center">
-                            <li>10 users included</li>
-                            <li>2 GB of storage</li>
-                            <li>Email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <input type="checkbox" name="" id="">
-                        <ul class="list-unstyled mt-3 mb-4  text-center">
-                            <li>10 users included</li>
-                            <li>2 GB of storage</li>
-                            <li>Email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <input type="checkbox" name="" id="">
-                        <ul class="list-unstyled mt-3 mb-4  text-center">
-                            <li>10 users included</li>
-                            <li>2 GB of storage</li>
-                            <li>Email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <input type="checkbox" name="" id="">
-                        <ul class="list-unstyled mt-3 mb-4  text-center">
-                            <li>10 users included</li>
-                            <li>2 GB of storage</li>
-                            <li>Email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <input type="checkbox" name="" id="">
-                        <ul class="list-unstyled mt-3 mb-4  text-center">
-                            <li>10 users included</li>
-                            <li>2 GB of storage</li>
-                            <li>Email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <input type="checkbox" name="" id="">
-                        <ul class="list-unstyled mt-3 mb-4  text-center">
-                            <li>10 users included</li>
-                            <li>2 GB of storage</li>
-                            <li>Email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <input type="checkbox" name="" id="">
-                        <ul class="list-unstyled mt-3 mb-4  text-center">
-                            <li>10 users included</li>
-                            <li>2 GB of storage</li>
-                            <li>Email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <input type="checkbox" name="" id="">
-                        <ul class="list-unstyled mt-3 mb-4  text-center">
-                            <li>10 users included</li>
-                            <li>2 GB of storage</li>
-                            <li>Email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
+            <?php } ?>
 
         </div>
     </form>
