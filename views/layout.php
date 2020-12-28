@@ -10,18 +10,19 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-5">
         <?php echo $content ?>
 
-        <footer class="footer">
-            <div class="container border-top mt-3 d-flex justify-content-center">
+        <footer class="footer mt-5">
+            <div class="container border-top text-center pt-5 pb-5">
                 <span class="text-muted">Place sticky footer content here.</span>
             </div>
         </footer>
     </div>
 
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/app.js"></script>
 </body>
 
 </html>
