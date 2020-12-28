@@ -35,13 +35,13 @@
             <div class="col-md-6 col-lg-6">
                 <select class="form-control" name="typeSwitch" id="typeSelector">
                     <option value="" selected disabled> Please select product type</option>
-                    <option value="dvd">DVD</option>
-                    <option value="book">Book</option>
-                    <option value="furniture">Furniture</option>
+                    <option value="DVD">DVD</option>
+                    <option value="BK">Book</option>
+                    <option value="FUR">Furniture</option>
                 </select>
             </div>
         </div>
-        <div class="form-group row justify-content-between hidden" id="dvd">
+        <div class="form-group row justify-content-between hidden" id="DVD">
             <label for="sizeInput" class="col-form-label">Size (MB)</label>
             <div class="col-md-8 col-lg-8">
                 <input type="number" class="form-control" id="sizeInput">
@@ -52,7 +52,7 @@
             </small>
 
         </div>
-        <div id="furniture" class="hidden">
+        <div id="FUR" class="hidden">
             <div class="form-group row justify-content-between">
                 <label for="height" class="col-form-label">Height (CM)</label>
                 <div class="col-md-8 col-lg-8">
@@ -75,7 +75,7 @@
                 </small>
             </div>
         </div>
-        <div class="form-group row justify-content-between hidden" id="book">
+        <div class="form-group row justify-content-between hidden" id="BK">
             <label for="weight" class="col-form-label">Weight (KG)</label>
             <div class="col-md-8 col-lg-8">
                 <input type="number" class="form-control" name="weight" id="weight">
