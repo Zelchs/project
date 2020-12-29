@@ -23,7 +23,7 @@ class Database extends Config
 
     public function getProducts()
     {
-        $statement = $this->pdo->prepare("SELECT * FROM posts ORDER BY sku ASC");
+        $statement = $this->pdo->prepare("SELECT * FROM posts ORDER BY id DESC");
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
