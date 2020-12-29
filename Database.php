@@ -4,14 +4,17 @@ namespace app;
 
 use PDO;
 use app\models\Product;
+use app\Config;
 
-class Database
+class Database extends Config
 {
+
+
     public \PDO $pdo;
     public static Database $db;
     public function __construct()
     {
-        $this->pdo = new PDO("mysql:host=localhost;port=3306;dbname=products", "root", "");
+        $this->pdo = new PDO("mysql:host=$this->host;port=3306;dbname=$this->dbName", "$this->user", "$this->pass");
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 

@@ -32,11 +32,14 @@ class MainController
             $productData["price"] = (float)$_POST["price"];
             $productData["size"] = (int)$_POST["size"];
             $productData["weight"] = (int)$_POST["weight"];
-            if ($_POST["typeSwitch"] === "FUR") {
-                $productData["dimensions"] = $_POST["height"] . "x" . $_POST["width"] . "x" . $_POST["length"];
-            } else {
-                $productData["dimensions"] = "";
+            if (isset($_POST["typeSwitch"])) {
+                if ($_POST["typeSwitch"] === "FUR") {
+                    $productData["dimensions"] = $_POST["height"] . "x" . $_POST["width"] . "x" . $_POST["length"];
+                } else {
+                    $productData["dimensions"] = "";
+                }
             }
+
 
             $product = new Product();
             $product->load($productData);

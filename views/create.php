@@ -25,7 +25,7 @@
         <div class="form-group row justify-content-between">
             <label for="price" class="col-form-label">Price ($)</label>
             <div class="col-md-8 col-lg-8">
-                <input type="number" class="form-control" id="price" name="price" required>
+                <input type="number" class="form-control" step=".01" id="price" name="price" required>
             </div>
         </div>
         <div class="form-group row justify-content-between">
@@ -42,7 +42,7 @@
         <div class="form-group row justify-content-between hidden" id="DVD">
             <label for="sizeInput" class="col-form-label">Size (MB)</label>
             <div class="col-md-8 col-lg-8">
-                <input type="number" name="size" class="form-control" id="sizeInput" required>
+                <input type="number" name="size" class="form-control not-required DVD" id="sizeInput">
             </div>
             <small class="form-text text-muted">
                 Please provide size in MB's
@@ -53,19 +53,19 @@
             <div class="form-group row justify-content-between">
                 <label for="height" class="col-form-label">Height (CM)</label>
                 <div class="col-md-8 col-lg-8">
-                    <input type="number" class="form-control" name="height" id="height" required>
+                    <input type="number" class="form-control not-required FUR" name="height" id="height">
                 </div>
             </div>
             <div class="form-group row justify-content-between">
                 <label for="width" class="col-form-label">Width (CM)</label>
                 <div class="col-md-8 col-lg-8">
-                    <input type="number" class="form-control" name="width" id="width" required>
+                    <input type="number" class="form-control not-required FUR" name="width" id="width">
                 </div>
             </div>
             <div class="form-group row justify-content-between">
                 <label for="length" class="col-form-label">Length (CM)</label>
                 <div class="col-md-8 col-lg-8">
-                    <input type="number" class="form-control" name="length" id="length" required>
+                    <input type="number" class="form-control not-required FUR" name="length" id="length">
                 </div>
                 <small class="form-text text-muted">
                     Please provide dimensions in HxWxL format
@@ -75,7 +75,7 @@
         <div class="form-group row justify-content-between hidden" id="BK">
             <label for="weight" class="col-form-label">Weight (KG)</label>
             <div class="col-md-8 col-lg-8">
-                <input type="number" class="form-control" name="weight" id="weight" required>
+                <input type="number" class="form-control not-required BK" name="weight" id="weight">
             </div>
             <small class="form-text text-muted">
                 Please provide weight in KG's

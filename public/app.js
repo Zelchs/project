@@ -1,8 +1,9 @@
 $(function () {
-  $(".hidden").hide();
   $("#typeSelector").change(function () {
     $(".hidden").hide();
+    $(".not-required").prop("required", false);
     $("#" + $(this).val()).show();
+    $("." + $(this).val()).prop("required", true);
     $("#sku").val($(this).val() + uniqueID());
   });
 });

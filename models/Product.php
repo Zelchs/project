@@ -28,11 +28,14 @@ class Product
         $errors = [];
 
         if (!$this->name) {
-            $errors["nameError"] = "Product name is required";
+            $errors[] = "Product name is required";
         }
 
         if (!$this->price) {
-            $errors["priceError"] = "Product price is required";
+            $errors[] = "Product price is required";
+        }
+        if (!$this->sku) {
+            $errors[] = "Product SKU is required";
         }
 
 

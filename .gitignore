@@ -3,3 +3,4 @@ vendor
 *.jpg
 *.png
 *.webp
+Config.php
