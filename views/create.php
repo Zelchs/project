@@ -39,16 +39,18 @@
                 </select>
             </div>
         </div>
-        <div class="form-group row justify-content-between hidden" id="DVD">
-            <label for="sizeInput" class="col-form-label">Size (MB)</label>
-            <div class="col-md-8 col-lg-8">
-                <input type="number" name="size" class="form-control not-required DVD" id="sizeInput">
+        <div class="hidden" id="DVD">
+            <div class="form-group row justify-content-between">
+                <label for="sizeInput" class="col-form-label">Size (MB)</label>
+                <div class="col-md-8 col-lg-8">
+                    <input type="number" name="size" class="form-control not-required DVD" id="sizeInput">
+                </div>
+                <small class="form-text text-muted">
+                    Please provide size in MB's
+                </small>
             </div>
-            <small class="form-text text-muted">
-                Please provide size in MB's
-            </small>
-
         </div>
+
         <div id="FUR" class="hidden">
             <div class="form-group row justify-content-between">
                 <label for="height" class="col-form-label">Height (CM)</label>
@@ -72,14 +74,17 @@
                 </small>
             </div>
         </div>
-        <div class="form-group row justify-content-between hidden" id="BK">
-            <label for="weight" class="col-form-label">Weight (KG)</label>
-            <div class="col-md-8 col-lg-8">
-                <input type="number" class="form-control not-required BK" name="weight" id="weight">
+        <div class="hidden" id="BK">
+            <div class="form-group row justify-content-between">
+                <label for="weight" class="col-form-label">Weight (KG)</label>
+                <div class="col-md-8 col-lg-8">
+                    <input type="number" class="form-control not-required BK" name="weight" id="weight">
+                </div>
+                <small class="form-text text-muted">
+                    Please provide weight in KG's
+                </small>
             </div>
-            <small class="form-text text-muted">
-                Please provide weight in KG's
-            </small>
         </div>
+
     </form>
 </main>
