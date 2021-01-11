@@ -2,8 +2,8 @@
 
 namespace app\controllers;
 
-use app\Router;
 use app\models\Product;
+use app\Router;
 
 class MainController
 {
@@ -11,7 +11,7 @@ class MainController
     {
         $products = $router->db->getProducts();
         return $router->renderView("index", [
-            "products" => $products
+            "products" => $products,
         ]);
     }
 
@@ -24,22 +24,15 @@ class MainController
             "price" => "",
             "size" => "",
             "weight" => "",
-            "dimensions" => ""
+            "dimensions" => "",
         ];
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $productData["sku"] = $_POST["sku"];
             $productData["name"] = $_POST["name"];
-            $productData["price"] = (float)$_POST["price"];
-            $productData["size"] = (int)$_POST["size"];
-            $productData["weight"] = (int)$_POST["weight"];
-            if (isset($_POST["typeSwitch"])) {
-                if ($_POST["typeSwitch"] === "FUR") {
-                    $productData["dimensions"] = $_POST["height"] . "x" . $_POST["width"] . "x" . $_POST["length"];
-                } else {
-                    $productData["dimensions"] = "";
-                }
-            }
-
+            $productData["price"] = (float) $_POST["price"];
+            $productData["size"] = (int) $_POST["size"];
+            $productData["weight"] = (int) $_POST["weight"];
+            $productData["dimensions"] = $_POST['typeSwitch'] === "FUR" ? $_POST["height"] . "x" . $_POST["width"] . "x" . $_POST["length"] : "";
 
             $product = new Product();
             $product->load($productData);
@@ -50,10 +43,9 @@ class MainController
             }
         }
 
-
         return $router->renderView("create", [
             "product" => $productData,
-            "errors" => $errors
+            "errors" => $errors,
         ]);
     }
 

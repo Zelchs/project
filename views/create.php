@@ -3,7 +3,7 @@
         <h1 class="my-0 mr-md-auto font-weight-normal">Add Product</h1>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="btn btn-outline-primary mr-3" href="/">Cancel</a>
-            <input type="submit" form="createForm" class="btn btn-outline-danger" value="Save">
+            <input type="submit" form="createForm" class="btn btn-outline-success" value="Save">
         </nav>
     </div>
 </header>
